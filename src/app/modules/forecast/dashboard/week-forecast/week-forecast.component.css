@@ -1,0 +1,163 @@
+.weatherCard {
+    margin: 5rem;
+}
+
+.links {
+    height: 38px;
+    display: inline-block;
+    margin: 1rem;
+}
+
+div {
+    display: block;
+}
+
+.weatherCard-summary {
+    margin-top: -3.5rem;
+    margin-left: 4.5rem;
+    font-size: 35px;
+    align-items: center;
+    direction: ltr;
+    display: flex;
+}
+
+.weatherCard-info {
+    margin-top: -3.5rem;
+    align-items: center;
+    margin-left: 15rem;
+}
+
+.weatherCard-info-1 {
+    align-items: center;
+    margin-left: 15rem;
+}
+
+img {
+   margin-right: 2rem;
+}
+
+.info-text{
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+     margin-top: 1.5rem;
+     margin-left: auto;
+}
+
+.smallCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border: 1px solid #2583f3;
+    border-radius: 5px;
+    padding: 17px;
+    background-color: #2583f3;
+    cursor:pointer;
+}
+
+.smallCardHeader {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 4px 0;
+}
+
+.smallCardBody {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 6px;
+}
+
+.smallCardWeatherIcon {
+    height: 76px;
+    width: 76px;
+    margin: 0 auto !important;
+}
+
+.weatherIcon {
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.weatherStatsContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: 14px;
+    width: 0;
+    flex: 1 1 auto;
+}
+
+.topStats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 0 6px 0;
+}
+
+.bottomStats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tempFormat {
+    opacity: 0.8;
+    direction: ltr;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.weatherCondition {
+    text-align: right;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    top: 1px;
+    opacity: 0.8;
+    margin-left: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.precipitationContainer {
+    display: flex;
+    font-size: 12px;
+    line-height: 16px;
+    position: relative;
+    top: 3px;
+    margin-left: 18px;
+    opacity: 0.8;
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+.precipitationDiv {
+    display:flex;
+}
+
+.arrow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    margin-left: 45%;
+    margin-top: -20px;
+  }
+
+  .arrow-down {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #2583f3;
+  }

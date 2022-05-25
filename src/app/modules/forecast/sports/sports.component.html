@@ -1,0 +1,108 @@
+<div style="width: 230px;">
+  <a
+    routerLink="/dashboard"
+    style="color: white; cursor: pointer; text-decoration: none;"
+  >
+    <h4 style="margin-left: 1rem;">
+      <img
+        src="./assets/rainbow.svg"
+        width="50px"
+        style="margin-top: -10px; margin-right: 5px;"
+      />
+      Weather Now
+    </h4>
+  </a>
+</div>
+<div
+  style="
+    margin: 0.7rem;
+    padding: 5px;
+    border: 1px solid #fdfff0;
+    background-color: #fdfff0;
+    border-radius: 5px;
+    text-align: center;
+  "
+>
+  <span style="color: #292929; font-size: 20px; font-weight: bold;">
+    World Sports
+  </span>
+</div>
+<div *ngIf="!dataFetched">
+  Loading..Please wait...
+</div>
+<div *ngIf="!data && dataFetched">
+  No sports events found. Please try again after some time.
+</div>
+
+<div *ngIf="data?.football">
+  <div class="card-title"></div>
+  <div class="cards">
+    <div class="card" *ngFor="let sport of data?.football">
+      <div class="card-horizontal">
+        <div>
+          <img
+            src="./assets/soccer.svg"
+            alt="Soccer"
+            width="100"
+            height="100"
+            style="margin-top: 25%;"
+          />
+        </div>
+        <div class="card-body">
+          <h6>{{ sport.start | date: 'medium' }} SOCCER</h6>
+          <h5>{{ sport.tournament }}</h5>
+          <h6>{{ sport.match }} in {{ sport.country }}</h6>
+          <p class="card-text">{{ sport.stadium }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="data?.golf">
+  <div class="card-title"></div>
+  <div class="cards">
+    <div class="card" *ngFor="let sport of data?.golf">
+      <div class="card-horizontal">
+        <div>
+          <img
+            src="./assets/golf.svg"
+            alt="Golf"
+            width="100"
+            height="100"
+            style="margin-top: 25%;"
+          />
+        </div>
+        <div class="card-body">
+          <h6>{{ sport.start | date: 'medium' }} GOLF</h6>
+          <h5>{{ sport.tournament }}</h5>
+          <h6>{{ sport.match }} in {{ sport.country }}</h6>
+          <p class="card-text">{{ sport.stadium }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="data?.cricket">
+  <div class="card-title"></div>
+  <div class="cards">
+    <div class="card" *ngFor="let sport of data?.cricket">
+      <div class="card-horizontal">
+        <div>
+          <img
+            src="./assets/cricket.svg"
+            alt="Cricket"
+            width="100"
+            height="100"
+            style="margin-top: 25%;"
+          />
+        </div>
+        <div class="card-body">
+          <h6>{{ sport.start | date: 'medium' }} CRICKET</h6>
+          <h5>{{ sport.tournament }}</h5>
+          <h6>{{ sport.match }} in {{ sport.country }}</h6>
+          <p class="card-text">{{ sport.stadium }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

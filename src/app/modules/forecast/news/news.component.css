@@ -1,0 +1,14 @@
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.card-title {
+    color: rgb(35, 34, 34);
+    font-size: 16px;
+}
+
+.card-text {
+    color: rgb(47, 46, 46);
+    font-size: 14px;
+}

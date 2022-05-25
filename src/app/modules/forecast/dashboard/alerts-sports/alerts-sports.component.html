@@ -1,0 +1,25 @@
+<div class="weatherCard" *ngIf="alerts != undefined">
+  <div class="weatherCard-body">
+    <div class="location-info">
+      WEATHER ALERTS
+    </div>
+    <div *ngIf="alerts != undefined && alerts.length > 0">
+      <div *ngFor="let alert of alerts">
+        <div style="padding: 10px;">
+          <span>
+            {{ alert.event }} remains effective
+            {{ alert.effective | date: 'shortTime' }} until
+            {{ alert.expires | date: 'shortTime' }} in {{ alert.headline }}
+          </span>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div
+      *ngIf="alerts == undefined || alerts.length == 0"
+      style="padding: 20px; font-size: 16px;"
+    >
+      No weather alerts found for this location at this time.
+    </div>
+  </div>
+</div>

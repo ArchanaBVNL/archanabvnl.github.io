@@ -1,0 +1,136 @@
+<div>
+  <div style="width: 230px;">
+    <a
+      routerLink="/dashboard"
+      style="color: white; cursor: pointer; text-decoration: none;"
+    >
+      <h4 style="margin-left: 1rem;">
+        <img
+          src="./assets/rainbow.svg"
+          width="50px"
+          style="margin-top: -10px; margin-right: 5px;"
+        />
+        Weather Now
+      </h4>
+    </a>
+  </div>
+  <a
+    routerLink="/news"
+    routerLinkActive="active"
+    style="
+      position: absolute;
+      margin-left: 16rem;
+      margin-top: -34px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+    "
+  >
+    News
+  </a>
+
+  <div *ngIf="currentLocation != undefined; else elseBlk">
+    <a
+      [routerLink]="['/sports', currentLocation]"
+      routerLinkActive="active"
+      style="
+        position: absolute;
+        margin-left: 20rem;
+        margin-top: -34px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+      "
+    >
+      Sports
+    </a>
+  </div>
+  <ng-template #elseBlk>
+    <a
+      [routerLink]="['/sports', '02215']"
+      routerLinkActive="active"
+      style="
+        position: absolute;
+        margin-left: 20rem;
+        margin-top: -34px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+      "
+    >
+      Sports
+    </a>
+  </ng-template>
+</div>
+<div
+  style="position: absolute; right: 0; margin-right: 4rem; margin-top: -41px;"
+>
+  <form
+    class="d-flex"
+    [formGroup]="form"
+    (ngSubmit)="changeLocation()"
+    (click)="normalSearch.value = ''"
+  >
+    <select
+      style="margin-right: 20px;"
+      *ngIf="locations.length > 0"
+      formControlName="favLocation"
+      class="form-select form-control"
+      (change)="changeFavoriteLocation($event)"
+      #favSearch
+    >
+      <option disabled>Select Location</option>
+      <option>Favorites</option>
+      <option *ngFor="let location of locations">{{ location }}</option>
+    </select>
+    <input
+      formControlName="search"
+      class="form-control me-2"
+      name="search"
+      type="search"
+      placeholder="Search City or Zip"
+      aria-label="Search"
+      #normalSearch
+    />
+    <button class="btn btn-info" id="search" type="submit">Search</button>
+  </form>
+  <div>
+    <div class="d-flex">
+      <label>&#8451;</label>
+      &nbsp;&nbsp;
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexSwitchCheckChecked"
+          [(ngModel)]="isFarenheit"
+          (click)="setTempUnit()"
+        />
+        <label class="form-check-label">&#8457;</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-5">
+    <app-weather
+      [searchText]="searchLocation"
+      [tempUnit]="temperatureUnit"
+      (favLocationsChanged)="fetchItemsFromStorage()"
+      (newImageUrl)="updateImageUrl($any($event))"
+    ></app-weather>
+  </div>
+  <div class="col-sm-3">
+    <app-map [imgUrl]="imageUrl"></app-map>
+  </div>
+  <div class="col-sm-4">
+    <app-alerts-sports [searchText]="searchLocation"></app-alerts-sports>
+  </div>
+</div>
+<app-week-forecast
+  [searchText]="searchLocation"
+  [tempUnit]="temperatureUnit"
+></app-week-forecast>

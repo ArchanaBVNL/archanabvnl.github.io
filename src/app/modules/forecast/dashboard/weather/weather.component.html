@@ -1,0 +1,124 @@
+<div *ngIf="!weather">
+  <span style="margin-left: 3rem;">Loading... Please wait...</span>
+</div>
+<div class="weatherCard" *ngIf="weather">
+  <div class="weatherCard-body">
+    <div class="location-info">
+      CURRENT WEATHER
+    </div>
+    <img
+      [src]="heartImage"
+      (click)="toggleHeartImage()"
+      width="20px"
+      height="20px"
+      style="cursor: pointer; float: right; margin-top: -20px;"
+    />
+    <h6 class="weatherCard-title">{{ location }}</h6>
+    <div class="tempOverview">
+      <span>
+        <img
+          src="{{ weather.current['condition'].icon }}"
+          class="weatherCard-img-left"
+          width="76px"
+          height="76px"
+          alt="weather icon"
+        />
+      </span>
+      <div *ngIf="temperatureUnit == 'F'; then fTemp; else cTemp"></div>
+      <ng-template #fTemp>
+        <h6 class="weatherCard-summary mb-2">
+          {{ weather.current['temp_f'] }}&nbsp;
+          <span>&#8457;</span>
+        </h6>
+      </ng-template>
+      <ng-template #cTemp>
+        <h6 class="weatherCard-summary mb-2">
+          {{ weather.current['temp_c'] }}&nbsp;
+          <span>&#8451;</span>
+        </h6>
+      </ng-template>
+
+      <h6 class="weatherCard-info mb-2">
+        {{ weather.current['condition'].text }}
+      </h6>
+      <div *ngIf="temperatureUnit == 'F'; then flTemp; else clTemp"></div>
+      <ng-template #flTemp>
+        <p class="weatherCard-info-1">
+          FEELS LIKE {{ weather.current['feelslike_f'] }}&nbsp;
+          <span>&#8457;</span>
+        </p>
+      </ng-template>
+      <ng-template #clTemp>
+        <p class="weatherCard-info-1">
+          FEELS LIKE {{ weather.current['feelslike_c'] }}&nbsp;
+          <span>&#8451;</span>
+        </p>
+      </ng-template>
+    </div>
+
+    <div class="moreInfo">
+      <div class="links">
+        <div class="info-link">
+          <div class="weatherCard-link text-white">
+            <span>Wind</span>
+          </div>
+        </div>
+        <div
+          class="info-text"
+          *ngIf="temperatureUnit == 'F'; then fgTemp; else cgTemp"
+        ></div>
+        <ng-template #fgTemp>
+          <span>{{ weather.current['gust_mph'] }} mph</span>
+        </ng-template>
+        <ng-template #cgTemp>
+          <span>{{ weather.current['gust_kph'] }} kph</span>
+        </ng-template>
+      </div>
+
+      <div class="links">
+        <div class="info-link">
+          <div class="weatherCard-link text-white">
+            <span>Humidity</span>
+          </div>
+        </div>
+        <span>{{ weather.current['humidity'] }}%</span>
+      </div>
+
+      <div class="links">
+        <div class="info-link">
+          <div class="weatherCard-link text-white">
+            <span>Visibility</span>
+          </div>
+        </div>
+        <div
+          class="info-text"
+          *ngIf="temperatureUnit == 'F'; then fvTemp; else cvTemp"
+        ></div>
+        <ng-template #fvTemp>
+          <span>{{ weather.current['vis_miles'] }} mi</span>
+        </ng-template>
+        <ng-template #cvTemp>
+          <span>{{ weather.current['vis_km'] }} km</span>
+        </ng-template>
+      </div>
+
+      <div class="links">
+        <div class="info-link">
+          <div class="weatherCard-link text-white">
+            <span>Pressure</span>
+          </div>
+        </div>
+        <div
+          class="info-text"
+          *ngIf="temperatureUnit == 'F'; then fpTemp; else cpTemp"
+        ></div>
+        <ng-template #fpTemp>
+          <span>{{ weather.current['pressure_in'] }} in</span>
+        </ng-template>
+        <ng-template #cpTemp>
+          <span>{{ weather.current['pressure_mb'] }} mb</span>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

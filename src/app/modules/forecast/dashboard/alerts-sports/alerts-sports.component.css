@@ -1,0 +1,75 @@
+.weatherCard {
+    margin-right: 3rem;
+    margin-top: 2rem;
+    margin-left: -55px;
+}
+
+.links {
+    height: 38px;
+    display: inline-block;
+    margin: 1rem;
+}
+
+div {
+    display: block;
+}
+
+.weatherCard-body {
+    border: 1px solid #dd6c6c;
+    border-radius: 5px;
+    padding: 17px;
+    background-color: #dd6c6c;
+    min-height: 238px;
+    max-height: 238px;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.weatherCard-summary {
+    margin-top: -3.5rem;
+    margin-left: 4.5rem;
+    font-size: 35px;
+    align-items: center;
+    direction: ltr;
+    display: flex;
+}
+
+.weatherCard-info {
+    margin-top: -3.5rem;
+    align-items: center;
+    margin-left: 15rem;
+}
+
+.weatherCard-info-1 {
+    align-items: center;
+    margin-left: 15rem;
+}
+
+img {
+    margin-right: 2rem;
+}
+
+.info-text {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+    margin-top: 0.5rem;
+    margin-left: auto;
+
+}
+
+.carousel-item-line {
+    font-size: 16px;
+}
+
+.carousel-item {
+    padding: 20px;
+    margin-left: 59px;
+    width: 82%;
+    margin-top: 43px;
+}
+
+.slide {
+    min-height: 175px;
+}

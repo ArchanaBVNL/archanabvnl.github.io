@@ -1,0 +1,42 @@
+.cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    background-color: aliceblue;
+    color: white;
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 16px;
+    margin: 1rem;
+    color: #fff;
+    padding: 1rem;
+    text-align: left;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.card-title {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card-text {
+    color: rgb(47, 46, 46);
+    font-size: 14px;
+}
+
+h5,
+h6 {
+    color: rgb(35, 34, 34);
+}
