@@ -18,7 +18,7 @@ export class ForecastService {
       'application/json; charset=utf-8',
     )
     return this.http.get<Weather>(
-      `http://api.weatherapi.com/v1/current.json?key=76dffc8ff43b4529b9614717220204&q=${searchString}&aqi=no`,
+      `https://api.weatherapi.com/v1/current.json?key=76dffc8ff43b4529b9614717220204&q=${searchString}&aqi=no`,
       { headers: headers },
     )
   }
@@ -31,7 +31,7 @@ export class ForecastService {
       'application/json; charset=utf-8',
     )
     return this.http.get<Weather>(
-      `http://api.weatherapi.com/v1/forecast.json?key=76dffc8ff43b4529b9614717220204&q=${searchString}&days=3&aqi=no&alerts=yes`,
+      `https://api.weatherapi.com/v1/forecast.json?key=76dffc8ff43b4529b9614717220204&q=${searchString}&days=3&aqi=no&alerts=yes`,
       { headers: headers },
     )
   }

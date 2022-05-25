@@ -18,7 +18,7 @@ export class SportsService {
       'application/json; charset=utf-8',
     )
     return this.http.get<Sport>(
-      `http://api.weatherapi.com/v1/sports.json?key=76dffc8ff43b4529b9614717220204&q=${searchString}`,
+      `https://api.weatherapi.com/v1/sports.json?key=76dffc8ff43b4529b9614717220204&q=${searchString}`,
       { headers: headers },
     )
   }

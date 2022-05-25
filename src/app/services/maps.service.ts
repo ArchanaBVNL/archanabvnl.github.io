@@ -18,7 +18,7 @@ export class MapsService {
       'application/json; charset=utf-8',
     )
     return this.http.get<Map>(
-      `http://www.mapquestapi.com/geocoding/v1/reverse?key=m6D65lmIwBj5mAy4eQPhHIytEKhCCHMS&location=${lat},${long}&includeRoadMetadata=true&includeNearestIntersection=true
+      `https://www.mapquestapi.com/geocoding/v1/reverse?key=m6D65lmIwBj5mAy4eQPhHIytEKhCCHMS&location=${lat},${long}&includeRoadMetadata=true&includeNearestIntersection=true
     `,
       { headers: headers },
     )
